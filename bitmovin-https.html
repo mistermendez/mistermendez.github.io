@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head crossorigin="anonymous">
+  <script type='text/javascript' src='//underscorejs.org/underscore-min.js'></script>
+  <script type="text/javascript" src="//bitmovin-a.akamaihd.net/bitmovin-player/stable/6.1.8/bitmovinplayer.min.js"></script>
+  </head>
+  <body>
+  <table border="0" width="100%" height="100%">
+  <tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td width="25%" height="25%">&nbsp;</td><td width="50%">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td height="50%">&nbsp;</td><td><div id='container' style='background-color:black;'></div></td><td>&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+</table>
+
+<script type="text/javascript">
+
+var printevent = function(arr) {
+  console.log("bitplayer: " + arr[0].type + " " + JSON.stringify(arr[0], null, '\t'));
+};
+
+var bitplayer = function(player) {
+  this.player = player;
+
+  var _onAudioAdaptation = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onAudioChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onAudioDownloadQualityChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onAudioPlaybackQualityChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onCueEnter = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onCueExit = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onDownloadFinished = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onDVRWindowExceeded = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onError = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onFullscreenEnter = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onFullscreenExit = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onMetadata = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onMute = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onPause = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onPeriodSwitched = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onPlay = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onPlaybackFinished = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onPlayerResize = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onReady = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSeek = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSeeked = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSegmentRequestFinished = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSourceLoaded = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSourceUnloaded = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onStartBuffering = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onStopBuffering = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSubtitleAdded = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSubtitleChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onSubtitleRemoved = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onTimeChanged = _.bind(function() {
+    //printevent(arguments);
+  }, this);
+
+  var _onTimeShift = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onTimeShifted = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onUnmute = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVideoAdaptation = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVideoDownloadQualityChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVideoPlaybackQualityChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVolumeChange = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVRError = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVRModeChanged = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onVRStereoChanged = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  var _onWarning = _.bind(function() {
+    printevent(arguments);
+  }, this);
+
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_AUDIO_ADAPTATION, _onAudioAdaptation);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_AUDIO_CHANGE, _onAudioChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_AUDIO_DOWNLOAD_QUALITY_CHANGE, _onAudioDownloadQualityChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_AUDIO_PLAYBACK_QUALITY_CHANGE, _onAudioPlaybackQualityChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_CUE_ENTER, _onCueEnter);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_CUE_EXIT, _onCueExit);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_DOWNLOAD_FINISHED, _onDownloadFinished);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_DVR_WINDOW_EXCEEDED, _onDVRWindowExceeded);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_ERROR, _onError);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_FULLSCREEN_ENTER, _onFullscreenEnter);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_FULLSCREEN_EXIT, _onFullscreenExit);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_METADATA, _onMetadata);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_MUTE, _onMute);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_PAUSE, _onPause);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_PERIOD_SWITCHED, _onPeriodSwitched);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_PLAY, _onPlay);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_PLAYBACK_FINISHED, _onPlaybackFinished);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_PLAYER_RESIZE, _onPlayerResize);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_READY, _onReady);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SEEK, _onSeek);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SEEKED, _onSeeked);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SEGMENT_REQUEST_FINISHED, _onSegmentRequestFinished);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SOURCE_LOADED, _onSourceLoaded);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SOURCE_UNLOADED, _onSourceUnloaded);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_START_BUFFERING, _onStartBuffering);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_STOP_BUFFERING, _onStopBuffering);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SUBTITLE_ADDED, _onSubtitleAdded);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SUBTITLE_CHANGE, _onSubtitleChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_SUBTITLE_REMOVED, _onSubtitleRemoved);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_TIME_CHANGED, _onTimeChanged);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_TIME_SHIFT, _onTimeShift);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_TIME_SHIFTED, _onTimeShifted);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_UNMUTE, _onUnmute);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VIDEO_ADAPTATION, _onVideoAdaptation);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VIDEO_DOWNLOAD_QUALITY_CHANGE, _onVideoDownloadQualityChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VIDEO_PLAYBACK_QUALITY_CHANGE, _onVideoPlaybackQualityChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VOLUME_CHANGE, _onVolumeChange);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VR_ERROR, _onVRError);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VR_MODE_CHANGED, _onVRModeChanged);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_VR_STEREO_CHANGED, _onVRStereoChanged);
+  this.player.addEventHandler(bitmovin.player.EVENT.ON_WARNING, _onWarning);
+
+  var conf = {
+    key: "087d2ef5-9d39-43ed-a57a-16a312c87c0b",
+    style: {
+      subtitlesHidden: false,
+      ux: true
+    },
+    playback: {
+      autoplay: false,
+      subtitleLanguage: 'en'
+    }
+  };
+
+  this.player.setup(conf).then(function(player) {
+    console.log("%cBitdash player has been set up, version:" + player.getVersion(), 'color: blue; font-weight: bold');
+  }, function(error) {
+    console.error(error);
+  });
+  this.player.setSkin({screenLogoImage: ''});
+
+  var source = {
+    hls: "http://player.ooyala.com/player/all/9laTl0ODE6Bbuo05bQprm5xjR-90nFbv.m3u8?secure_ios_token=MFlBNjliKzJ2T3MwL2xwalRES2tuejR4ODRqODZPRHlNeW94d012OEdKQ2Mwem9Dano5ck1GbGpGYm5vCjF4NlJnRTVqakhkc1lxV3hzb2J0aW1ScEJnPT0K"
+  };
+
+  var technology = "html5.hls"; // "html5.hls", "flash.hls", "html5.dash", "flash.dash"
+
+  player.load(source, technology).then(function(player) {
+    var technology = player.getPlayerType() + "." + player.getStreamType();
+    console.log("%cBitdash player has loaded source: " + JSON.stringify(player.getConfig().source) +
+      " technology: " + technology, 'color: green; font-weight: bold');
+  }, function(error) {
+    console.error("Bitdash player load error " + error);
+  });
+};
+
+bitPlayer = new bitplayer(bitmovin.player("container"));
+</script>
+</body>
+</html>
