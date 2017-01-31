@@ -257,7 +257,7 @@ var bitplayer = function(player) {
     hls: "http://player.ooyala.com/player/all/9laTl0ODE6Bbuo05bQprm5xjR-90nFbv.m3u8?secure_ios_token=MFlBNjliKzJ2T3MwL2xwalRES2tuejR4ODRqODZPRHlNeW94d012OEdKQ2Mwem9Dano5ck1GbGpGYm5vCjF4NlJnRTVqakhkc1lxV3hzb2J0aW1ScEJnPT0K"
   };
 
-  var technology = "flash.hls"; // "html5.hls", "flash.hls", "html5.dash", "flash.dash"
+  var technology = "html5.hls"; // "html5.hls", "flash.hls", "html5.dash", "flash.dash"
 
   player.load(source, technology).then(function(player) {
     var technology = player.getPlayerType() + "." + player.getStreamType();
